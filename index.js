@@ -183,18 +183,9 @@ function splitRowsByDate(rows) {
     }
 
     const [dateTimeStr, resultStr] = row.split(",", 2);
-    const dateTime = new Date(Date.parse(dateTimeStr.replace(/-/g, "/") + " GMT"));
+    const dateTime = new Date().toLocaleDateString('pt-br');
     const dateStr = dateTime.toDateString();
-
-    const options = {
-  weekday: 'long',
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-};
-
-alert(dateStr.toLocaleDateString('pt-BR', options));
-
+ 
     
     let resultArray = dateValues[dateStr];
     if (!resultArray) {
