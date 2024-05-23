@@ -182,15 +182,11 @@ function splitRowsByDate(rows) {
       continue;
     }
 
-       const [dateTimeStr, resultStr] = row.split(",", 2);
-     dateTime = new Date();
-    const options = {
-  weekday: 'long',
-  year: 'numeric',
-  month: 'numeric',
-  day: 'numeric',
-};
-  const dateStr =  dateTime.toLocaleDateString('pt-BR',options);
+      const [dateTimeStr, resultStr] = row.split(",", 2);
+    const dateTime = new Date(Date.parse(dateTimeStr.replace(/-/g, "/") + " GMT"));
+    const dateStr = dateTime.toDateString();
+
+ // const dateStr =  dateTime.toLocaleDateString('pt-BR',options);
 
  //   const dateStr = dateTime.toDateString();
    //    alert(dateTime.toLocaleDateString('pt-BR', null));
