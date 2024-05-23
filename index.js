@@ -184,7 +184,7 @@ function splitRowsByDate(rows) {
 
     const [dateTimeStr, resultStr] = row.split(",", 2);
     const dateTime = new Date().toLocaleDateString('pt-br');
-    const dateStr = dateTime.toDateString();
+    const dateStr = dateTime.toString();
  
     
     let resultArray = dateValues[dateStr];
