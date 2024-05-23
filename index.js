@@ -108,13 +108,13 @@ function templatizeString(text, parameters) {
 
 function getStatusText(color) {
   return color == "nodata"
-    ? "No Data Available"
+    ? "Sem dados"
     : color == "success"
-    ? "Fully Operational"
+    ? "Operando sem incidentes"
     : color == "failure"
-    ? "Major Outage"
+    ? "Problemas no fluxo"
     : color == "partial"
-    ? "Partial Outage"
+    ? "Problemas parciais no fluxo"
     : "Unknown";
 }
 
@@ -122,11 +122,11 @@ function getStatusDescriptiveText(color) {
   return color == "nodata"
     ? "No Data Available: Health check was not performed."
     : color == "success"
-    ? "No downtime recorded on this day."
+    ? "Não houveram problemas nesse dia"
     : color == "failure"
-    ? "Major outages recorded on this day."
+    ? "Ocorreram problemas técnicos nesse dia"
     : color == "partial"
-    ? "Partial outages recorded on this day."
+    ? "Ocorreram parcial problemas técnicos nesse dia."
     : "Unknown";
 }
 
